@@ -1,6 +1,6 @@
 <template>
   <div class="vab-logo">
-    <vab-icon v-if="logo" :icon="logo"></vab-icon>
+    <IconFont v-if="logo" :type="logo" />
     <span class="anticon"></span>
     <span>{{ title }}</span>
   </div>
@@ -8,12 +8,10 @@
 
 <script>
   import { computed } from 'vue'
-  import VabIcon from '@/layout/vab-icon'
   import { useStore } from 'vuex'
 
   export default {
     name: 'VabLogo',
-    components: { VabIcon },
     setup() {
       const store = useStore()
       return {

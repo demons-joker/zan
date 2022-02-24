@@ -17,12 +17,11 @@ const {
   build7z,
   donation,
 } = require('./src/config')
-const { webpackBarName, webpackBanner, donationConsole } = require('vab-config')
+const { donationConsole } = require('vab-config')
 
 if (donation) donationConsole()
 const { version, author } = require('./package.json')
 const Webpack = require('webpack')
-const WebpackBar = require('webpackbar')
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const dayjs = require('dayjs')
 const date = dayjs().format('YYYY_M_D')
@@ -53,7 +52,7 @@ module.exports = {
   devServer: {
     hot: true,
     port: devPort,
-    open: true,
+    open: false,
     noInfo: false,
     overlay: {
       warnings: true,

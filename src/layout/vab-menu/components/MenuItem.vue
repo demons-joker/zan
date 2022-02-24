@@ -1,7 +1,7 @@
 <template>
   <a-menu-item :key="routeChildren.path" @click.capture="handleLink">
     <span class="anticon">
-      <vab-icon :icon="routeChildren.meta.icon"></vab-icon>
+      <IconFont :type="routeChildren.meta.icon" />
     </span>
     <span>{{ routeChildren.meta.title }}</span>
   </a-menu-item>
@@ -9,10 +9,8 @@
 
 <script>
   import { isExternal } from '@/utils/validate'
-  import VabIcon from '@/layout/vab-icon'
   export default {
     name: 'MenuItem',
-    components: { VabIcon },
     props: {
       item: {
         type: Object,

@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
 import Antd from 'ant-design-vue'
+import { createFromIconfontCN } from '@ant-design/icons-vue'
+const IconFont = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_1760832_4i9pxof1cj.js',
+})
 import App from './App'
 import router from './router'
 import store from './store'
@@ -13,5 +17,9 @@ if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('@/utils/static')
   mockXHR()
 }
-
-createApp(App).use(store).use(router).use(Antd).mount('#app')
+createApp(App)
+  .use(store)
+  .use(router)
+  .use(Antd)
+  .component('IconFont', IconFont)
+  .mount('#app')
